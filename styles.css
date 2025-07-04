@@ -481,6 +481,48 @@ body {
     line-height: 1.6;
 }
 
+/* Token Logo Styles */
+.token-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: linear-gradient(135deg, #64ffda, #9f7aea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 10px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.token-logo[alt="Wall Street Pepe"] {
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+}
+
+.token-logo[alt="Solaxy"] {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+}
+
+.token-logo[alt="Flockerz"] {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.token-logo[alt="Best Wallet Token"] {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+}
+
+.token-logo[alt="Meme Index"] {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+}
+
+.review-header .token-logo {
+    width: 48px;
+    height: 48px;
+    font-size: 12px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
