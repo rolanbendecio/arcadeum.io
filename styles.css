@@ -147,6 +147,8 @@ body {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    min-width: 0;
+    width: 100%;
 }
 
 .token-logo {
@@ -318,25 +320,34 @@ body {
     padding-top: 1rem;
 }
 
-/* Blog Section */
-.blog {
+/* Token Details Section */
+.token-details {
     padding: 4rem 0;
 }
 
-.blog h2 {
+.token-details h2 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #ffffff;
     text-align: center;
 }
 
-.blog-grid {
+.section-intro {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+.token-list {
     display: grid;
     gap: 2rem;
 }
 
-.blog-post {
+.token-detail-card {
     background: rgba(45, 55, 72, 0.8);
     border: 1px solid #4a5568;
     border-radius: 12px;
@@ -345,77 +356,268 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.blog-post:hover {
+.token-detail-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(159, 122, 234, 0.2);
+    box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
 }
 
-.post-header {
-    margin-bottom: 1rem;
+.token-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.post-header h3 {
-    color: #ffffff;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-.post-meta {
+.token-detail-info {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.token-detail-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: linear-gradient(135deg, #64ffda, #9f7aea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+.token-detail-meta h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.token-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tag.meme {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid #dc2626;
+}
+
+.tag.utility {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid #3b82f6;
+}
+
+.tag.layer2 {
+    background: rgba(168, 85, 247, 0.2);
+    color: #c084fc;
+    border: 1px solid #a855f7;
+}
+
+.tag.infrastructure {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid #22c55e;
+}
+
+.tag.dao {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid #f59e0b;
+}
+
+.tag.governance {
+    background: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+    border: 1px solid #8b5cf6;
+}
+
+.tag.hot {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid #dc2626;
+    animation: pulse 2s infinite;
+}
+
+.tag.trending {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid #22c55e;
+}
+
+.tag.ending {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid #f59e0b;
+    animation: pulse 2s infinite;
+}
+
+.tag.honest {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid #22c55e;
+}
+
+.tag.new {
+    background: rgba(168, 85, 247, 0.2);
+    color: #c084fc;
+    border: 1px solid #a855f7;
+    animation: pulse 2s infinite;
+}
+
+.tag.trading {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid #3b82f6;
+}
+
+.tag.solana {
+    background: rgba(139, 92, 246, 0.2);
+    color: #a78bfa;
+    border: 1px solid #8b5cf6;
+}
+
+.tag.growing {
+    background: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid #22c55e;
+}
+
+.tag.bitcoin {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+    border: 1px solid #f59e0b;
+}
+
+.tag.scalability {
+    background: rgba(6, 182, 212, 0.2);
+    color: #22d3ee;
+    border: 1px solid #06b6d4;
+}
+
+.token-detail-price {
+    text-align: right;
+    min-width: 120px;
+}
+
+.current-price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #64ffda;
+    margin-bottom: 0.25rem;
+}
+
+.raised-amount {
+    display: block;
     font-size: 0.9rem;
     color: #a0aec0;
 }
 
-.live-indicator {
-    background: #e53e3e;
-    color: #ffffff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    animation: pulse 2s infinite;
+.token-description {
+    margin-bottom: 1.5rem;
 }
 
-.updated-indicator {
-    background: #38a169;
-    color: #ffffff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
+.token-description p {
+    color: #cbd5e0;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.video-container {
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(26, 32, 44, 0.8);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+.key-takeaways {
+    margin-bottom: 1.5rem;
+    background: rgba(26, 32, 44, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #64ffda;
+}
+
+.key-takeaways h4 {
+    color: #64ffda;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
-.analysis-indicator {
-    background: #3182ce;
-    color: #ffffff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
+.key-takeaways ul {
+    list-style: none;
+    padding: 0;
+}
+
+.key-takeaways li {
+    color: #cbd5e0;
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.4;
+}
+
+.key-takeaways li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #68d391;
+    font-weight: bold;
+}
+
+.token-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #64ffda;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #64ffda;
+    border-radius: 6px;
+    text-decoration: none;
     font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #64ffda;
+    color: #0f0f23;
+    transform: translateY(-2px);
 }
 
 @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
-}
-
-.post-content {
-    margin-bottom: 1.5rem;
-}
-
-.post-content p {
-    color: #cbd5e0;
-    margin-bottom: 1rem;
-}
-
-.post-footer {
-    border-top: 1px solid #4a5568;
-    padding-top: 1rem;
-    font-size: 0.9rem;
-    color: #a0aec0;
 }
 
 /* Footer */
@@ -495,6 +697,8 @@ body {
     color: #ffffff;
     font-size: 10px;
     text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+    margin-right: 0.75rem;
 }
 
 .token-logo[alt="Wall Street Pepe"] {
@@ -513,8 +717,32 @@ body {
     background: linear-gradient(135deg, #3b82f6, #60a5fa);
 }
 
-.token-logo[alt="Meme Index"] {
-    background: linear-gradient(135deg, #ef4444, #f87171);
+.token-logo[alt="Token6900"] {
+    background: linear-gradient(135deg, #8b5cf6, #c084fc);
+}
+
+.token-logo[alt="Snorter Bot"] {
+    background: linear-gradient(135deg, #f97316, #fb923c);
+}
+
+.token-logo[alt="Bitcoin Hyper"] {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.token-logo[alt="BTC Bull Token"] {
+    background: linear-gradient(135deg, #dc2626, #f87171);
+}
+
+.token-logo[alt="Little Pepe"] {
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+}
+
+.token-logo[alt="SpacePay"] {
+    background: linear-gradient(135deg, #06b6d4, #67e8f9);
+}
+
+.token-logo[alt="Cogni AI"] {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
 }
 
 .review-header .token-logo {
@@ -573,8 +801,28 @@ body {
     }
     
     .review-card,
-    .blog-post {
+    .token-detail-card {
         padding: 1.5rem;
+    }
+    
+    .token-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .token-detail-price {
+        text-align: left;
+        margin-top: 1rem;
+    }
+    
+    .token-detail-logo {
+        width: 56px;
+        height: 56px;
+        font-size: 12px;
+    }
+    
+    .video-container iframe {
+        height: 180px;
     }
     
     .post-meta {
@@ -600,7 +848,7 @@ body {
     
     .rankings,
     .reviews,
-    .blog {
+    .token-details {
         padding: 2rem 0;
     }
     
@@ -619,7 +867,21 @@ body {
     }
     
     .review-card,
-    .blog-post {
+    .token-detail-card {
         padding: 1rem;
+    }
+    
+    .token-detail-logo {
+        width: 48px;
+        height: 48px;
+        font-size: 10px;
+    }
+    
+    .video-container iframe {
+        height: 160px;
+    }
+    
+    .token-actions {
+        flex-direction: column;
     }
 }
